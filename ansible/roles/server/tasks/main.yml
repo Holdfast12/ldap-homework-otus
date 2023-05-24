@@ -1,0 +1,8 @@
+- name: install freeipa-server
+  ansible.builtin.dnf:
+    name:
+    - freeipa-server
+    - ipa-server-dns
+    - bind-dyndb-ldap
+    state: latest
+    install_weak_deps: false

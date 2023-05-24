@@ -6,4 +6,12 @@
   roles:
     - common
 
+- hosts: ipa.otus.lan
+  become: true
+  gather_facts: no
+  vars_files:
+    - defaults/main.yml
+  roles:
+    - server
+
 ...

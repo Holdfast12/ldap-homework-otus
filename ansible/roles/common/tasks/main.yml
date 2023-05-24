@@ -1,0 +1,10 @@
+- name: set timezone to Moscow
+  timezone:
+    name: Europe/Moscow
+
+- name: install basic soft
+  ansible.builtin.dnf:
+    name:
+    - glibc-langpack-ru
+    state: latest
+    install_weak_deps: false
