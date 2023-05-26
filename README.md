@@ -1,8 +1,10 @@
 <h2>1) Установить FreeIPA</h2>
 Поднятие сервера:
+
 ```bash
 vagrant up ipa.otus.lan
 ```
+
 Установка сервера до момента использования скрипта ipa-server-install проходит при помощи плейбука<br>
 
 ```bash
@@ -18,6 +20,7 @@ IPA admin password: <Указываем пароль минимум 8 симво
 Password (confirm): <Дублируем указанный пароль>
 NetBIOS domain name [OTUS]: <Нажимем Enter>
 ```
+
 дождался завершения установки<br>
 <img src="./screenshots/ipa-server-install.png"></img>
     • Directory Manager password — это пароль администратора сервера каталогов, У этого пользователя есть полный доступ к каталогу.<br>
@@ -39,6 +42,7 @@ NetBIOS domain name [OTUS]: <Нажимем Enter>
 
 <h2>2) Написать Ansible-playbook для конфигурации клиента</h2>
 Поднятие клиентских машин:
+
 ```bash
 vagrant up client1.otus.lan client2.otus.lan
 ```
@@ -48,6 +52,7 @@ vagrant up client1.otus.lan client2.otus.lan
 ```bash
 ipa-client-install
 ```
+
 получим такой вывод:<br>
 <img src="./screenshots/ipa-client-install.png"></img>
 
@@ -56,6 +61,7 @@ ipa-client-install
 
 Добавление пользователя (зашли на серверную машину):<br>
 • Авторизируемся на сервере:
+
 ```bash
 kinit admin
 ```
