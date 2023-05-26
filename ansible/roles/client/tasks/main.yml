@@ -1,0 +1,9 @@
+- name: install freeipa-client
+  ansible.builtin.dnf:
+    name:
+    - freeipa-client
+    state: latest
+    install_weak_deps: false
+
+- name: add host to ipa-server
+  shell: echo -e "yes\nyes" | ipa-client-install --mkhomedir --domain=OTUS.LAN --server=ipa.otus.lan --no-ntp -p admin -w Qq123456

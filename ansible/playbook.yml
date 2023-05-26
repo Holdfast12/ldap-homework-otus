@@ -1,17 +1,17 @@
 ---
-- hosts: all
+- hosts: ipa.otus.lan
   become: true
   vars_files:
     - defaults/main.yml
   roles:
     - common
-
-- hosts: ipa.otus.lan
+    - server
+  
+- hosts: client1.otus.lan, client2.otus.lan
   become: true
-  gather_facts: no
   vars_files:
     - defaults/main.yml
   roles:
-    - server
-
+    - common
+    - client
 ...

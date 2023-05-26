@@ -6,5 +6,29 @@
   ansible.builtin.dnf:
     name:
     - glibc-langpack-ru
+    - chrony
+    - vim
     state: latest
     install_weak_deps: false
+
+- name: start and enable chronyd
+  service:
+    name: chronyd
+    state: started
+    enabled: yes
+
+- name: disable firewalld
+  service:
+    name: firewalld
+    state: stopped
+    enabled: no
+
+- name: disable SeLinux
+  ansible.posix.selinux:
+    state: disabled
+
+- name: add ipa-server in /etc/hosts
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    line: 192.168.57.10 ipa.otus.lan ipa
+    create: yes

@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
     # Указываем ОС, версию, количество ядер и ОЗУ
     config.vm.box = "almalinux/9"
     config.vm.box_check_update = false
-    config.vm.synced_folder "/home/michael/dnf_cache", "/var/cache/dnf/"
+    #config.vm.synced_folder "/home/michael/dnf_cache", "/var/cache/dnf/"
 
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "ansible/playbook.yml"
