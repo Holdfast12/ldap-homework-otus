@@ -7,6 +7,8 @@ vagrant up ipa.otus.lan
 
 Установка сервера до момента использования скрипта ipa-server-install проходит при помощи плейбука<br>
 
+Использую скрипт установки сервера:<br>
+
 ```bash
 ipa-server-install
 
